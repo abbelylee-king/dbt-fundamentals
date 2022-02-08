@@ -11,6 +11,9 @@ sources:
         columns:
           - name: id
             description: Primary key for customer
+            tests:
+              - unique
+              - not_null
 
       - name: orders
         description: A clone of a postgres application database
@@ -21,3 +24,6 @@ sources:
             freshness:
               warn_after: {count: 12, period: hour}
               error_after: {count: 24, period: hour}
+            tests:
+              - unique
+              - not_null
